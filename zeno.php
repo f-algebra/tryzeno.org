@@ -5,7 +5,7 @@ echo $haskell_src;
 $file = tmpfile();
 
 // Gotta get the file-name for the temp file
-$file_meta_data = stream_get_meta_data($file);
+$meta_data = stream_get_meta_data($file);
 $filename = $meta_data['uri'];
 
 echo $filename;
