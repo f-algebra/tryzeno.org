@@ -1,5 +1,5 @@
 <html>
-<body>
+<body style="font-family: monospace;">
 <?php
 $haskell_src = $_REQUEST['src'];
 $filename = uniqid() . ".hs";
