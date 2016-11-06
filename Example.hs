@@ -188,6 +188,12 @@ mirror (Node l x r) = Node (mirror r) x (mirror l)
 
 -- Natural number properties
 
+prop_mul_add_dist (x :: Nat) y z
+  = prove (x * (y + z) :=: (x * y) + (x * z))
+
+{-
+Uncomment properties you'd like to prove!
+
 prop_add_right_ident (x :: Nat)
   = prove (x + Zero :=: x)
 prop_add_assoc (x :: Nat) y z
@@ -296,3 +302,4 @@ prop_height_mirror (t :: Tree Bool)
   = prove (height t :=: height (mirror t))
 prop_mirror_twice (t :: Tree Bool)
   = prove (mirror (mirror t) :=: t)
+-}
