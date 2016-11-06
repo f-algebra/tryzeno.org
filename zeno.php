@@ -12,5 +12,5 @@ echo $filename;
 
 fwrite($file, $haskell_src);
 fclose($file);
-echo shell_exec('zeno ' . $filename);
+echo shell_exec('zeno --tryzeno ' . $filename);
 ?>
