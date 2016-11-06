@@ -8,5 +8,5 @@ $filename = $meta_data['uri'];
 
 fwrite($file, $haskell_src);
 fclose($file);
-echo shell_exec('zeno --tryzeno ' . $filename);
+echo shell_exec('timeout 120s - zeno --tryzeno ' . $filename);
 ?>
