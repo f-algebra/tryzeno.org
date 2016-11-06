@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php
 $haskell_src = $_REQUEST['src'];
 $filename = uniqid() . ".hs";
@@ -7,8 +9,13 @@ try {
 	fwrite($file, $haskell_src);
 	fclose($file);
 
-	echo shell_exec("cd hs && timeout 120s zeno --tryzeno $filename 2>&1");
+	$proofs = shell_exec("cd hs && timeout 120s zeno --tryzeno $filename 2>&1");
+	echo nl2br($proofs);
+} catch (Exception $e) {
+	echo "Exception: " . $e->getMessage();
 } finally {
 	unlink($filename);
 }
 ?>
+</body>
+</html>
