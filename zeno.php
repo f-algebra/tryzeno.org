@@ -1,5 +1,5 @@
 <?php
-$haskell_src = $_POST['src'];
+$haskell_src = $_REQUEST['src'];
 echo $haskell_src;
 
 $file = tmpfile();
